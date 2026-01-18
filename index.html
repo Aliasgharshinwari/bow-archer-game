@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT ARCHER - Official Game Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- GLOBAL VARIABLES & RESET --- */
+        :root {
+            --primary: #e67e22; /* Vibrant Orange for Action */
+            --accent: #d35400;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 90vh; /* Takes up 90% of the screen height */
+            /* Placeholder image from Unsplash (Archery theme) */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(18,18,18,1)), 
+                        url('https://images.unsplash.com/photo-1511370235399-1802cb11d402?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem; /* Big Title */
+            margin: 0;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #ddd;
+            margin: 10px 0 40px 0;
+            max-width: 600px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+            font-family: 'Oswald', sans-serif;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: var(--accent);
+        }
+
+        /* --- SOCIAL PROOF BAR --- */
+        .stats-bar {
+            background: var(--bg-card);
+            border-bottom: 1px solid #333;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .stat-item { font-weight: bold; font-size: 1.1rem; color: var(--text-muted); }
+        .stat-item span { color: var(--primary); margin-right: 5px; }
+
+        /* --- MAIN CONTENT CONTAINER --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .center-text { text-align: center; }
+
+        /* --- FEATURES GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #333;
+        }
+
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .card-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+        .card h3 { color: var(--primary); font-size: 1.5rem; margin: 10px 0; }
+
+        /* --- VIDEO SECTION --- */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: black;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+        }
+        .footer-links a {
+            color: var(--text-muted);
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { color: #555; margin-top: 30px; font-size: 0.9rem; }
+
+        /* --- RESPONSIVE TWEAKS --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .cta-button { padding: 15px 30px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Project Archer</h1>
+        <p>Master the gravity. Defeat the bosses. Claim the castle.</p>
+        
+        <a href="#" class="cta-button">Play Free Now</a>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-item"><span>🚀</span> Update v1.2 Live</div>
+        <div class="stat-item"><span>⭐</span> 4.8/5 Rating</div>
+        <div class="stat-item"><span>⚔️</span> 50,000+ Players</div>
+    </div>
+
+    <div class="container">
+
+        <div class="center-text">
+            <h2 class="section-title">Watch Gameplay</h2>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?mute=1" title="Game Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="center-text">
+            <h2 class="section-title">Game Features</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">🏹</span>
+                <h3>Physics Combat</h3>
+                <p>Arrows drop with gravity and sway with the wind. Aim carefully.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🏰</span>
+                <h3>Castle Defense</h3>
+                <p>Build towers and traps to stop the enemy horde from breaching the gates.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">💎</span>
+                <h3>Epic Loot</h3>
+                <p>Collect over 50 unique bows, from the Rapid Crossbow to the Fire Longbow.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <h3>Join the Community</h3>
+        <p style="color: #aaa; margin-bottom: 30px;">Get the latest patch notes and find teammates.</p>
+        
+        <div class="footer-links">
+            <a href="#">Discord</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">Contact Support</a>
+        </div>
+
+        <p class="copyright">&copy; 2024 Project Archer Team. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
